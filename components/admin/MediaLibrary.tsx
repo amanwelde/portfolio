@@ -11,6 +11,7 @@ type MediaAsset = {
   previewUrl?: string | null
   format?: string | null
   size: number
+  readonly?: boolean
 }
 
 export function MediaLibrary({ initialAssets }: { initialAssets: MediaAsset[] }) {
@@ -66,6 +67,7 @@ export function MediaLibrary({ initialAssets }: { initialAssets: MediaAsset[] })
   }
 
   async function remove(asset: MediaAsset) {
+    if (asset.readonly) return
     if (!window.confirm('Delete this media asset?')) return
     const response = await fetch(`/api/media/${asset.id}`, { method: 'DELETE' })
     if (response.ok) {
@@ -104,9 +106,9 @@ export function MediaLibrary({ initialAssets }: { initialAssets: MediaAsset[] })
           <article key={asset.id} className="glass-panel overflow-hidden rounded-xl">
             <div className="aspect-video bg-black">
               {asset.type === 'video' ? (
-                <video src={asset.previewUrl ?? asset.url} poster={asset.thumbnailUrl ?? undefined} controls className="h-full w-full object-cover" />
+                <video src={asset.previewUrl ?? asset.url} poster={asset.thumbnailUrl ?? undefined} controls className="h-full w-full object-contain" />
               ) : (
-                <img src={asset.thumbnailUrl ?? asset.url} alt={asset.publicId} className="h-full w-full object-cover" />
+                <img src={asset.thumbnailUrl ?? asset.url} alt={asset.publicId} className="h-full w-full object-contain" />
               )}
             </div>
             <div className="space-y-3 p-4">
@@ -119,9 +121,13 @@ export function MediaLibrary({ initialAssets }: { initialAssets: MediaAsset[] })
                 <a href={asset.url} target="_blank" rel="noreferrer" className="rounded border border-white/15 px-3 py-2 text-sm text-white hover:bg-white/5">
                   Preview
                 </a>
-                <button onClick={() => remove(asset)} className="rounded border border-red-400/30 px-3 py-2 text-sm text-red-300 hover:bg-red-400/10">
-                  Delete
-                </button>
+                {asset.readonly ? (
+                  <span className="rounded border border-white/10 px-3 py-2 text-sm text-on-surface-variant">Sample asset</span>
+                ) : (
+                  <button onClick={() => remove(asset)} className="rounded border border-red-400/30 px-3 py-2 text-sm text-red-300 hover:bg-red-400/10">
+                    Delete
+                  </button>
+                )}
               </div>
             </div>
           </article>

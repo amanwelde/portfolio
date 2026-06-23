@@ -12,6 +12,10 @@ interface ProjectItem {
   category: string
 }
 
+function isVideoSource(src: string) {
+  return /\.(mp4|mov|webm|mkv|avi)(\?|#|$)/i.test(src)
+}
+
 interface ProjectsProps {
   projects?: ProjectItem[]
 }
@@ -53,7 +57,7 @@ export function Projects({ projects }: ProjectsProps) {
           </div>
         </Reveal>
 
-        <motion.div layout className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <motion.div layout className="grid grid-cols-1 gap-8 md:grid-cols-2 max-w-5xl mx-auto">
           <AnimatePresence mode="popLayout">
             {filtered.map((project, i) => (
               <motion.article
@@ -63,13 +67,24 @@ export function Projects({ projects }: ProjectsProps) {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, delay: i * 0.05 }}
-                className="group relative aspect-video overflow-hidden rounded-xl border border-white/10 transition-transform duration-500 hover:scale-[1.02]"
+                className="group relative w-full overflow-hidden rounded-xl border border-white/10 transition-transform duration-500 hover:scale-[1.02] bg-black"
               >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
-                />
+                {isVideoSource(project.image) ? (
+                  <video
+                    src={project.image}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-auto block"
+                  />
+                ) : (
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-auto block grayscale transition-all duration-700 group-hover:grayscale-0"
+                  />
+                )}
                 <div className="glass-panel absolute inset-0 flex flex-col justify-end p-8 opacity-0 transition-opacity group-hover:opacity-100">
                   <span className="mb-2 font-mono text-xs uppercase tracking-widest text-primary">
                     {project.category}

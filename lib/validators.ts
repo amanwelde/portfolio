@@ -56,6 +56,7 @@ export const settingsSchema = z.object({
   heroTitle: z.string().min(2),
   heroSubtitle: z.string().min(2),
   heroImage: z.string().url().optional().nullable(),
+  aboutImage: z.string().url().optional().nullable(),
   aboutText: z.string().min(10),
   ownerName: z.string().min(2),
   email: z.string().email(),
@@ -69,6 +70,13 @@ export const settingsSchema = z.object({
   footerText: z.string().min(2),
   primaryColor: z.string().min(4),
   secondaryColor: z.string().min(4),
+  heroCtaText: z.string().optional().nullable(),
+  heroCtaLink: z.string().optional().nullable(),
+  heroSecondaryCtaText: z.string().optional().nullable(),
+  heroSecondaryCtaLink: z.string().optional().nullable(),
+  projectsCompleted: z.union([z.string(), z.number()]).optional().nullable()
+    .transform(val => val === '' ? null : Number(val))
+    .refine(val => val === null || !isNaN(val), { message: "Must be a valid number" }),
 })
 
 export const mediaSchema = z.object({

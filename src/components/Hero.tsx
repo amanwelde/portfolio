@@ -3,14 +3,29 @@
 import { motion } from 'framer-motion'
 import { heroImage as defaultHeroImage } from '../data/content'
 import { GhostButton, PrimaryButton, Reveal, SectionLabel } from './ui'
+import { AnimatedCounter } from './ui/AnimatedCounter'
 
 interface HeroProps {
   heroTitle?: string
   heroSubtitle?: string
   heroImage?: string
+  heroCtaText?: string | null
+  heroCtaLink?: string | null
+  heroSecondaryCtaText?: string | null
+  heroSecondaryCtaLink?: string | null
+  projectsCompleted?: number | null
 }
 
-export function Hero({ heroTitle, heroSubtitle, heroImage }: HeroProps) {
+export function Hero({ 
+  heroTitle, 
+  heroSubtitle, 
+  heroImage,
+  heroCtaText,
+  heroCtaLink,
+  heroSecondaryCtaText,
+  heroSecondaryCtaLink,
+  projectsCompleted
+}: HeroProps) {
   const bannerImage = heroImage ?? defaultHeroImage
 
   return (
@@ -34,42 +49,48 @@ export function Hero({ heroTitle, heroSubtitle, heroImage }: HeroProps) {
               'I create engaging videos for TikTok, Instagram, and other platforms, helping brands grow through creative storytelling, content strategy, and performance analysis.'}
           </p>
           <div className="flex flex-wrap gap-4 pt-2">
-            <PrimaryButton className="amber-glow flex items-center gap-2">
-              View My Work
-              <span className="material-symbols-outlined filled text-xl">play_arrow</span>
-            </PrimaryButton>
-            <GhostButton>Contact Me</GhostButton>
-          </div>
-        </Reveal>
+              <a href={heroCtaLink || '#work'} className="group">
+                <PrimaryButton className="amber-glow flex items-center gap-2">
+                  {heroCtaText || 'View My Work'}
+                  <span className="material-symbols-outlined filled text-xl transition-transform group-hover:translate-x-1">play_arrow</span>
+                </PrimaryButton>
+              </a>
+              <a href={heroSecondaryCtaLink || 'https://www.linkedin.com/in/amanueal-weldemariam-b1622a329?utm_source=share_via&utm_content=profile&utm_medium=member_android'} target="_blank" rel="noreferrer">
+                <GhostButton>{heroSecondaryCtaText || 'Learn More'}</GhostButton>
+              </a>
+            </div>
+          </Reveal>
 
-        <Reveal delay={0.15} className="relative hidden md:block">
-          <motion.div
-            whileHover={{ scale: 1.01 }}
-            transition={{ duration: 0.4 }}
-            className="relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10"
-          >
-            <img
-              src={bannerImage}
-              alt="Professional videographer in cinematic studio"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-          </motion.div>
+          <Reveal delay={0.15} className="relative hidden md:block">
+            <motion.div
+              whileHover={{ scale: 1.01 }}
+              transition={{ duration: 0.4 }}
+              className="relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10"
+            >
+              <img
+                src={bannerImage}
+                alt="Professional videographer in cinematic studio"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            </motion.div>
 
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-            className="glass-panel absolute -bottom-6 -left-6 rounded-lg p-6"
-          >
-            <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-container text-on-primary-fixed">
-                <span className="material-symbols-outlined">movie</span>
-              </div>
-              <div>
-                <div className="font-mono text-xs uppercase tracking-widest text-primary">
-                  Projects Done
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              className="glass-panel absolute -bottom-6 -left-6 rounded-lg p-6"
+            >
+              <div className="flex items-center gap-4">
+                <div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary-container text-on-primary-fixed">
+                  <span className="material-symbols-outlined">movie</span>
                 </div>
-                <div className="font-display text-2xl font-semibold text-white">500+</div>
+                <div>
+                  <div className="font-mono text-xs uppercase tracking-widest text-primary">
+                    Videos Edited
+                  </div>
+                  <div className="font-display text-2xl font-semibold text-white">
+                    <AnimatedCounter value={projectsCompleted ? projectsCompleted : '73+'} />
+                  </div>
               </div>
             </div>
           </motion.div>

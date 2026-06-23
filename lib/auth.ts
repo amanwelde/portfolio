@@ -1,11 +1,17 @@
 import { cookies } from 'next/headers'
 
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? ''
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD ?? ''
+import { prisma } from './prisma'
+import bcrypt from 'bcryptjs'
 
-export function verifyAdmin(email: string, password: string) {
-  if (!ADMIN_EMAIL || !ADMIN_PASSWORD) return false
-  return email === ADMIN_EMAIL && password === ADMIN_PASSWORD
+export async function verifyAdmin(email: string, password: string) {
+  try {
+    const adminUser = await prisma.adminUser.findUnique({ where: { email } })
+    if (!adminUser) return false
+    return bcrypt.compare(password, adminUser.passwordHash)
+  } catch (error) {
+    console.error('Error verifying admin:', error)
+    return false
+  }
 }
 
 export async function createAdminSession() {

@@ -1,11 +1,16 @@
 {
-  "servers": {
-    "stitch": {
-      "type": "http",
-      "url": "https://stitch.googleapis.com/mcp",
-      "headers": {
-        "X-Goog-Api-Key": "AQ.Ab8RN6JSQITyCwIYiIXsKZDEFRNoDiN8juMSRdnQSNAJNRPacA"
-      }
-    }
-  }
+	"servers": {
+		"stitch": {
+			"type": "http",
+			"url": "https://stitch.googleapis.com/mcp",
+			"headers": {
+				"X-Goog-Api-Key": "AQ.Ab8RN6JSQITyCwIYiIXsKZDEFRNoDiN8juMSRdnQSNAJNRPacA"
+			}
+		},
+		"supabase": {
+			"type": "http",
+			"url": "https://mcp.supabase.com/mcp?project_ref=yatqyjlfwqhfyhfardgx"
+		}
+	},
+	"inputs": []
 }

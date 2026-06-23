@@ -1,7 +1,26 @@
+// Image import removed
+
+export const socialLinks = [
+  { label: 'Instagram', href: 'https://www.instagram.com/aman_welde' },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@amanuwelde' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@amfame-369' },
+  { label: 'WhatsApp', href: 'https://wa.me/251993103133' },
+  {
+    label: 'LinkedIn',
+    href: 'https://www.linkedin.com/in/amanueal-weldemariam-b1622a329?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+  },
+] as const
+
+export const contactDetails = {
+  email: 'amanuealweldemariam@gmail.com',
+  phone: '0993103133',
+  whatsapp: '0993103133',
+} as const
+
 export const site = {
   name: 'AMAN CREATIVE',
   tagline: 'Creating Stories That Inspire and Content That Performs',
-  email: 'hello@amancreative.com',
+  email: 'amanuealweldemariam@gmail.com',
 } as const
 
 export const navLinks = [
@@ -55,20 +74,17 @@ export const projects = [
   {
     category: 'COMMERCIAL',
     title: 'Midnight Pulse',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuDxL82CzE18IQKpRLLBTtF7f7tdtjiGZsIBabJiayreaLlA66EEq2nyj6W6UrW3Y7p8xo_9bqp6yc8VZAS_oMI5Ugz4VgD5PATNHyE8pX-pRzXbrh5nq0_Gn8TjLKivJ-upKF6scjhvRl1-41XneCVnouUQ3OLhnUiscS7TlXAjNKpc0MCb9PJWun3kpB7O4EHSIOJhXCpi2HLak7wx2wPyJbzmMPDOMV6AE_yddg2RD4PYAtfsmEqVBenC0wBzrC_bOKlnsQGgZeVA',
+    image: '/media/sample-1.MOV',
   },
   {
     category: 'DOCUMENTARY',
     title: 'The Last Artisan',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuAt8UeP-UnzwKnWAqPd5VZdJUq0x0LKZlpHSRo4LTqfE5LXzH10oWccYl4LYj4JmibFJsL7u2SRsDyGr-TuBLz-n2xfipUXTg1muu0HOBp4g2mYWth8dRuJOmCyzPiFLjVeI7l9sfiO745XqWQ8U_Sl3FYHP_HmnHQEM0MV0TrTEdP269UuMNv1ZzgMQU6qUoYSJ6lpnaZ7HDRclqRXR9fa0PKoG_csfYeCpStU2F_CH5L9PJ6wPI_thXKqjSPn0Nvpm57CN2us4lmi',
+    image: '/media/sample-2.MOV',
   },
   {
     category: 'MUSIC VIDEO',
     title: 'Sonic Waves 2024',
-    image:
-      'https://lh3.googleusercontent.com/aida-public/AB6AXuBY0AIaV_1uI52LJQN0PAM1brJLU7guqCfb8RVzWXE3WdI7D18F5ZsFuv6FVQYVimeWLTKD82bCuegeJtrX7Kc7fdyp-g2hKa7wLRuBvu4Xt4xjt6YqM74xfFd9gNp27FKnCEEKXqvB69zEKlYNnGq4yFs0aecRpEwASDsUqxWspe78pDbLuLjBWvmPzjJk3XvbqF1nktUtdIL3ShhKdAYgTrBjr5S4fFHOQxJejDXf3IqbjdGlwckay1NyrxtiS86DFi0xCSPiNv_f',
+    image: '/media/sample-3.MOV',
   },
 ] as const
 
@@ -150,10 +166,48 @@ export const aboutFeatures = [
   'Cinematic Editing',
 ] as const
 
-export const heroImage =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuAMNKe2p4N1wGmZ2ius_cLJ_ziIcL5FqxqZlPn5tqi3rGEhlu4aGhgWjYFNX1GRoWsmb8HnFN7cxbC6JYXMhNtfq5UzJfFzwfrniiCAKC3V7SOhajjxna44e0vCew3WKyebrj0SstdQKgl0zOjVpNtMkUp5XhFva-vKA9ajRFF8nUtDYMGpoy8YnnI2fKj0NhfnQaifly8mmo6vqSEUvbTM3Z1MYW8hP2WnWoQMiqYNRVtZkKChg6CYF0WFiob7f3eQPA2jUcY4n13W'
+export const heroImage = '/media/profileImage.JPG'
 
 export const aboutImage =
   'https://lh3.googleusercontent.com/aida-public/AB6AXuBfqoG1fWu6o8U7iReqpeoilgQ9PNZ6uk9nc4ECTGr4rNgTZWeVimZU_4aAyeUnOfPAjdAZInc7rBQQURS16RVGKK0l0Ie2NeRTKDztPn0jsBrdIkVjtmXsEqO_NHjjY3ScicaMo-I-ZMIgOiDjVIRzxtaclPlgb-1o9s_hEBKqiKk4h79X_GGITDpVBODf-5kTjnc38UANVGBxaFJPwGK_tXydw5wECCwmx2aZLQVrBdNOUpbBpRHvhZWTOehuAM0CZoLa90C6IhTV'
 
-export const socialLinks = ['Instagram', 'TikTok', 'WhatsApp', 'GitHub', 'LinkedIn'] as const
+export const sampleMediaAssets = [
+  {
+    id: 'sample-image-hero',
+    type: 'image',
+    url: '/media/profileImage.JPG',
+    publicId: 'profileImage.JPG',
+    thumbnailUrl: '/media/profileImage.JPG',
+    previewUrl: '/media/profileImage.JPG',
+    size: 19613268,
+    readonly: true,
+  },
+  {
+    id: 'sample-video-1',
+    type: 'video',
+    url: '/media/sample-1.MOV',
+    publicId: 'sample-1.MOV',
+    previewUrl: '/media/sample-1.MOV',
+    size: 59498380,
+    readonly: true,
+  },
+  {
+    id: 'sample-video-2',
+    type: 'video',
+    url: '/media/sample-2.MOV',
+    publicId: 'sample-2.MOV',
+    previewUrl: '/media/sample-2.MOV',
+    size: 53981707,
+    readonly: true,
+  },
+  {
+    id: 'sample-video-3',
+    type: 'video',
+    url: '/media/sample-3.MOV',
+    publicId: 'sample-3.MOV',
+    previewUrl: '/media/sample-3.MOV',
+    size: 60389001,
+    readonly: true,
+  },
+] as const
+

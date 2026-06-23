@@ -1,15 +1,19 @@
 'use client'
 
 import { FormEvent, useState } from 'react'
-import { socialLinks } from '../data/content'
+import { contactDetails, socialLinks } from '../data/content'
 import { Reveal, SectionLabel, SectionTitle } from './ui'
 
 interface ContactProps {
   email?: string
+  phone?: string
+  whatsapp?: string
 }
 
-export function Contact({ email }: ContactProps) {
-  const contactEmail = email ?? 'hello@amancreative.com'
+export function Contact({ email, phone, whatsapp }: ContactProps) {
+  const contactEmail = email ?? contactDetails.email
+  const contactPhone = phone ?? contactDetails.phone
+  const contactWhatsApp = whatsapp ?? contactDetails.whatsapp
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -69,20 +73,43 @@ export function Contact({ email }: ContactProps) {
               </div>
             </a>
 
+            <a href={`tel:${contactPhone.replace(/\s+/g, '')}`} className="group flex items-center gap-4">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/10 transition-colors group-hover:bg-primary/10">
+                <span className="material-symbols-outlined text-primary">call</span>
+              </div>
+              <div>
+                <div className="font-mono text-xs text-on-surface-variant">CALL US</div>
+                <div className="font-bold text-white">{contactPhone}</div>
+              </div>
+            </a>
+
+            <a href={`https://wa.me/251${contactWhatsApp.replace(/\D/g, '').replace(/^0/, '')}`} target="_blank" rel="noreferrer" className="group flex items-center gap-4">
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/10 transition-colors group-hover:bg-primary/10">
+                <span className="material-symbols-outlined text-primary">chat</span>
+              </div>
+              <div>
+                <div className="font-mono text-xs text-on-surface-variant">WHATSAPP</div>
+                <div className="font-bold text-white">{contactWhatsApp}</div>
+              </div>
+            </a>
+
             <div className="group flex items-center gap-4">
               <div className="flex h-14 w-14 items-center justify-center rounded-full border border-white/10 transition-colors group-hover:bg-primary/10">
                 <span className="material-symbols-outlined text-primary">share</span>
               </div>
               <div>
                 <div className="font-mono text-xs text-on-surface-variant">FOLLOW US</div>
-                <div className="flex gap-4 font-bold text-white">
+                <div className="flex flex-wrap gap-4 font-bold text-white">
                   {socialLinks.map((link) => (
-                    <span
-                      key={link}
-                      className="cursor-pointer transition-colors hover:text-primary"
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="transition-colors hover:text-primary"
                     >
-                      {link}
-                    </span>
+                      {link.label}
+                    </a>
                   ))}
                 </div>
               </div>

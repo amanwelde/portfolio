@@ -1,20 +1,23 @@
 'use client'
 
-import { aboutFeatures, aboutImage } from '../data/content'
+import { aboutFeatures, aboutImage as defaultAboutImage } from '../data/content'
 import { PrimaryButton, Reveal, SectionLabel, SectionTitle } from './ui'
 
 interface AboutProps {
   aboutText?: string
+  aboutImage?: string
 }
 
-export function About({ aboutText }: AboutProps) {
+export function About({ aboutText, aboutImage }: AboutProps) {
+  const imageSrc = aboutImage ?? defaultAboutImage
+
   return (
     <section id="about" className="py-[120px]">
       <div className="container-main grid grid-cols-1 items-center gap-16 md:grid-cols-2 md:gap-20">
         <Reveal className="relative">
           <div className="group aspect-video overflow-hidden rounded-xl border border-white/10">
             <img
-              src={aboutImage}
+              src={imageSrc}
               alt="Professional video editing suite"
               className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             />

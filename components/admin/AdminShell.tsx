@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { redirect } from 'next/navigation'
 import { clearAdminSession } from '@/lib/auth'
 
 const navItems = [
@@ -10,12 +11,14 @@ const navItems = [
   ['/admin/messages', 'Messages'],
   ['/admin/settings', 'Settings'],
   ['/admin/media', 'Media'],
+  ['/admin/security', 'Security'],
 ] as const
 
 export function AdminShell({ children }: { children: React.ReactNode }) {
   async function logout() {
     'use server'
     await clearAdminSession()
+    redirect('/login')
   }
 
   return (

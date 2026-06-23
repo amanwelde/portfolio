@@ -1,5 +1,6 @@
 import { AdminHeader } from '@/components/admin/AdminShell'
 import { prisma } from '@/lib/prisma'
+import { sampleMediaAssets, projects as defaultProjects, services as defaultServices, skills as defaultSkills, testimonials as defaultTestimonials } from '@/src/data/content'
 
 export default async function DashboardPage() {
   const [projects, services, skills, testimonials, messages, media] = prisma
@@ -11,7 +12,7 @@ export default async function DashboardPage() {
         prisma.contactMessage.count(),
         prisma.mediaAsset.count(),
       ])
-    : [0, 0, 0, 0, 0, 0]
+    : [defaultProjects.length, defaultServices.length, defaultSkills.length, defaultTestimonials.length, 0, sampleMediaAssets.length]
 
   const stats = [
     ['Projects', projects],

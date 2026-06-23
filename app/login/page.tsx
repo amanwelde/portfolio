@@ -18,7 +18,7 @@ export default async function LoginPage({
     const password = String(formData.get('password') ?? '')
     const target = String(formData.get('redirect') ?? '/admin/dashboard')
 
-    if (!verifyAdmin(email, password)) {
+    if (!(await verifyAdmin(email, password))) {
       redirect(`/login?error=Invalid%20credentials&redirect=${encodeURIComponent(target)}`)
     }
 

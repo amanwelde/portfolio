@@ -1,6 +1,4 @@
-import { site } from '../data/content'
-
-const footerLinks = ['Privacy Policy', 'Terms of Service', 'Instagram', 'Vimeo', 'LinkedIn']
+import { site, socialLinks } from '../data/content'
 
 interface FooterProps {
   footerText?: string
@@ -22,13 +20,15 @@ export function Footer({ footerText, email, phone, brandName }: FooterProps) {
           <p className="mt-2 text-sm text-on-surface-variant">{footerText}</p>
         </div>
         <div className="flex flex-wrap justify-center gap-6">
-          {footerLinks.map((link) => (
+          {socialLinks.map((link) => (
             <a
-              key={link}
-              href="#"
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noreferrer"
               className="font-mono text-xs uppercase tracking-widest text-on-surface-variant transition-colors hover:text-primary"
             >
-              {link}
+              {link.label}
             </a>
           ))}
         </div>

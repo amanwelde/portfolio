@@ -54,22 +54,64 @@ async function main() {
       heroTitle: 'Digital Marketer & Creative Video Storyteller',
       heroSubtitle:
         'I create engaging videos for TikTok, Instagram, and other platforms, helping brands grow through creative storytelling, content strategy, and performance analysis. I also produce cinematic wedding films that transform memories into timeless stories.',
-      heroImage: placeholderImage,
+      heroImage: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBfqoG1fWu6o8U7iReqpeoilgQ9PNZ6uk9nc4ECTGr4rNgTZWeVimZU_4aAyeUnOfPAjdAZInc7rBQQURS16RVGKK0l0Ie2NeRTKDztPn0jsBrdIkVjtmXsEqO_NHjjY3ScicaMo-I-ZMIgOiDjVIRzxtaclPlgb-1o9s_hEBKqiKk4h79X_GGITDpVBODf-5kTjnc38UANVGBxaFJPwGK_tXydw5wECCwmx2aZLQVrBdNOUpbBpRHvhZWTOehuAM0CZoLa90C6IhTV',
       aboutText:
         'I am a passionate digital marketer and video editor dedicated to creating high-quality content that captures attention and drives results. From social media campaigns to cinematic wedding films, I combine creativity with data-driven strategies to deliver memorable experiences.',
       ownerName: 'Aman Weldemariam',
-      email: 'hello@amancreative.com',
-      phone: '+251900000000',
-      whatsapp: '+251900000000',
+      email: 'amanuealweldemariam@gmail.com',
+      phone: '0993103133',
+      whatsapp: '0993103133',
       github: 'https://github.com/',
-      linkedin: 'https://www.linkedin.com/',
-      instagram: 'https://www.instagram.com/',
-      tiktok: 'https://www.tiktok.com/',
-      youtube: null,
+      linkedin: 'https://www.linkedin.com/in/amanueal-weldemariam-b1622a329?utm_source=share_via&utm_content=profile&utm_medium=member_android',
+      instagram: 'https://www.instagram.com/aman_welde',
+      tiktok: 'https://www.tiktok.com/@amanuwelde',
+      youtube: 'https://www.youtube.com/@amfame-369',
       footerText: 'Creating Stories That Inspire and Content That Performs',
       primaryColor: '#ffc38d',
       secondaryColor: '#f89f43',
     },
+  })
+
+  await prisma.mediaAsset.deleteMany()
+  await prisma.mediaAsset.createMany({
+    data: [
+      {
+        type: 'image',
+        url: '/media/profileImage.JPG',
+        publicId: 'profileImage.JPG',
+        thumbnailUrl: '/media/profileImage.JPG',
+        previewUrl: '/media/profileImage.JPG',
+        format: 'JPG',
+        size: 19613268,
+      },
+      {
+        type: 'video',
+        url: '/media/sample-1.MOV',
+        publicId: 'sample-1.MOV',
+        thumbnailUrl: '/media/sample-1.MOV',
+        previewUrl: '/media/sample-1.MOV',
+        format: 'MOV',
+        size: 59498380,
+      },
+      {
+        type: 'video',
+        url: '/media/sample-2.MOV',
+        publicId: 'sample-2.MOV',
+        thumbnailUrl: '/media/sample-2.MOV',
+        previewUrl: '/media/sample-2.MOV',
+        format: 'MOV',
+        size: 53981707,
+      },
+      {
+        type: 'video',
+        url: '/media/sample-3.MOV',
+        publicId: 'sample-3.MOV',
+        thumbnailUrl: '/media/sample-3.MOV',
+        previewUrl: '/media/sample-3.MOV',
+        format: 'MOV',
+        size: 60389001,
+      },
+    ],
   })
 
   await prisma.service.deleteMany()
@@ -93,20 +135,51 @@ async function main() {
   })
 
   await prisma.project.deleteMany()
-  await prisma.project.createMany({
-    data: categories.map((category, order) => ({
-      title: category,
-      slug: category.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, ''),
-      description: `${category} by Aman Creative, crafted for social performance and cinematic impact.`,
-      category,
-      tags: [category, 'Aman Creative'],
+  
+  const projects = [
+    {
+      title: 'Midnight Pulse',
+      slug: 'midnight-pulse',
+      description: 'Commercial project by Aman Creative, crafted for social performance and cinematic impact.',
+      category: 'COMMERCIAL',
+      tags: ['COMMERCIAL', 'Aman Creative'],
       thumbnailUrl: placeholderImage,
-      videoUrl: null,
+      videoUrl: '/media/sample-1.MOV',
       duration: null,
       cloudinaryPublicId: null,
-      featured: order < 3,
-      order,
-    })),
+      featured: true,
+      order: 0,
+    },
+    {
+      title: 'The Last Artisan',
+      slug: 'the-last-artisan',
+      description: 'Documentary project by Aman Creative, crafted for social performance and cinematic impact.',
+      category: 'DOCUMENTARY',
+      tags: ['DOCUMENTARY', 'Aman Creative'],
+      thumbnailUrl: placeholderImage,
+      videoUrl: '/media/sample-2.MOV',
+      duration: null,
+      cloudinaryPublicId: null,
+      featured: true,
+      order: 1,
+    },
+    {
+      title: 'Sonic Waves 2024',
+      slug: 'sonic-waves-2024',
+      description: 'Music video project by Aman Creative, crafted for social performance and cinematic impact.',
+      category: 'MUSIC VIDEO',
+      tags: ['MUSIC VIDEO', 'Aman Creative'],
+      thumbnailUrl: placeholderImage,
+      videoUrl: '/media/sample-3.MOV',
+      duration: null,
+      cloudinaryPublicId: null,
+      featured: true,
+      order: 2,
+    },
+  ]
+  
+  await prisma.project.createMany({
+    data: projects,
   })
 }
 

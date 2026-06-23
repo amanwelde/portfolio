@@ -1,5 +1,6 @@
 generator client {
-  provider = "prisma-client-js"
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
 }
 
 datasource db {
@@ -72,6 +73,7 @@ model SiteSettings {
   heroTitle      String
   heroSubtitle   String
   heroImage      String?
+  aboutImage     String?
   aboutText      String
   ownerName      String   @default("Aman Weldemariam")
   email          String
@@ -82,6 +84,11 @@ model SiteSettings {
   instagram      String
   tiktok         String?
   youtube        String?
+  heroCtaText    String?
+  heroCtaLink    String?
+  heroSecondaryCtaText String?
+  heroSecondaryCtaLink String?
+  projectsCompleted Int?
   footerText     String
   primaryColor   String
   secondaryColor String
@@ -100,4 +107,12 @@ model MediaAsset {
   size      Int
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model AdminUser {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }
