@@ -62,7 +62,7 @@ export function Hero({
             </div>
           </Reveal>
 
-          <Reveal delay={0.15} className="relative hidden md:block">
+          <Reveal delay={0.15} className="relative mt-8 md:mt-0 md:block w-full max-w-sm mx-auto md:max-w-none">
             <motion.div
               whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.4 }}
