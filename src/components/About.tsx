@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { aboutFeatures, aboutImage as defaultAboutImage } from '../data/content'
 import { PrimaryButton, Reveal, SectionLabel, SectionTitle } from './ui'
 
@@ -15,11 +16,12 @@ export function About({ aboutText, aboutImage }: AboutProps) {
     <section id="about" className="py-[120px]">
       <div className="container-main grid grid-cols-1 items-center gap-16 md:grid-cols-2 md:gap-20">
         <Reveal className="relative">
-          <div className="group aspect-video overflow-hidden rounded-xl border border-white/10">
-            <img
+          <div className="group relative aspect-video overflow-hidden rounded-xl border border-white/10">
+            <Image
               src={imageSrc}
               alt="Professional video editing suite"
-              className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+              fill
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
           </div>
           <div className="absolute -right-10 -top-10 hidden h-40 w-40 rounded-tr-3xl border-r-2 border-t-2 border-primary/30 md:block" />

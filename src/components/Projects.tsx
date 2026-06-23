@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import { Reveal, SectionLabel, SectionTitle } from './ui'
 import { projectFilters, projects as defaultProjects } from '../data/content'
 
@@ -79,9 +80,11 @@ export function Projects({ projects }: ProjectsProps) {
                     className="w-full h-auto block"
                   />
                 ) : (
-                  <img
+                  <Image
                     src={project.image}
                     alt={project.title}
+                    width={800}
+                    height={600}
                     className="w-full h-auto block grayscale transition-all duration-700 group-hover:grayscale-0"
                   />
                 )}

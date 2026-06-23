@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { skills as defaultSkills, software } from '../data/content'
 import { Reveal, SectionLabel, SectionTitle } from './ui'
 
@@ -57,10 +58,10 @@ export function Skills({ skills }: SkillsProps) {
               key={item.name}
               className={`glass-panel rounded-xl p-6 text-center transition-transform hover:-translate-y-1 ${'offset' in item && item.offset ? 'mt-8' : ''}`}
             >
-              <img
+              <Image width={48} height={48}
                 src={item.image}
                 alt={item.name}
-                className="mx-auto mb-4 h-12 w-12 grayscale transition-all hover:grayscale-0"
+                className="mx-auto mb-4 grayscale transition-all hover:grayscale-0"
               />
               <div className="font-mono text-[10px] tracking-widest">{item.name}</div>
             </div>

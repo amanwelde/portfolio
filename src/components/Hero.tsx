@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { heroImage as defaultHeroImage } from '../data/content'
 import { GhostButton, PrimaryButton, Reveal, SectionLabel } from './ui'
 import { AnimatedCounter } from './ui/AnimatedCounter'
@@ -67,10 +68,12 @@ export function Hero({
               transition={{ duration: 0.4 }}
               className="relative aspect-[4/5] overflow-hidden rounded-xl border border-white/10"
             >
-              <img
+              <Image
                 src={bannerImage}
                 alt="Professional videographer in cinematic studio"
-                className="h-full w-full object-cover"
+                fill
+                priority
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </motion.div>
