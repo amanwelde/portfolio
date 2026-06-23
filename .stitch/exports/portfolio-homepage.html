@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIGRAPH STUDIO | Professional Video Editor Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Hanken+Grotesk:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#2a2a2a",
+                        "surface-container-highest": "#353534",
+                        "on-error": "#690005",
+                        "inverse-on-surface": "#313030",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "primary-fixed-dim": "#ffb875",
+                        "secondary-fixed": "#e5e2e1",
+                        "inverse-surface": "#e5e2e1",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface-container-lowest": "#0e0e0e",
+                        "outline-variant": "#534437",
+                        "tertiary-fixed-dim": "#c6c6c7",
+                        "on-primary": "#4b2800",
+                        "on-primary-container": "#693a00",
+                        "secondary": "#c8c6c5",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-tertiary": "#2f3131",
+                        "surface-container": "#201f1f",
+                        "on-surface-variant": "#d9c2b1",
+                        "on-error-container": "#ffdad6",
+                        "surface-bright": "#3a3939",
+                        "surface-dim": "#131313",
+                        "error": "#ffb4ab",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-container": "#434546",
+                        "secondary-container": "#474746",
+                        "on-secondary": "#313030",
+                        "on-primary-fixed-variant": "#6b3b00",
+                        "on-tertiary-fixed-variant": "#454747",
+                        "on-background": "#e5e2e1",
+                        "tertiary": "#cecece",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "surface-tint": "#ffb875",
+                        "primary-container": "#f89f43",
+                        "surface-variant": "#353534",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-primary-fixed": "#2d1600",
+                        "primary-fixed": "#ffdcc0",
+                        "inverse-primary": "#8d4f00",
+                        "outline": "#a18d7d",
+                        "error-container": "#93000a",
+                        "primary": "#ffc38d",
+                        "surface": "#131313",
+                        "background": "#131313",
+                        "tertiary-container": "#b2b3b3",
+                        "on-tertiary-fixed": "#1a1c1c",
+                        "surface-container-low": "#1c1b1b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "32px",
+                        "stack-md": "16px",
+                        "section-gap": "120px",
+                        "margin-mobile": "20px",
+                        "container-max": "1280px",
+                        "stack-sm": "8px",
+                        "stack-lg": "32px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Plus Jakarta Sans"],
+                        "display-lg": ["Plus Jakarta Sans"],
+                        "headline-xl": ["Plus Jakarta Sans"],
+                        "label-mono": ["JetBrains Mono"],
+                        "body-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "display-lg-mobile": ["48px", {"lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "display-lg": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-xl": ["40px", {"lineHeight": "48px", "fontWeight": "600"}],
+                        "label-mono": ["12px", {"lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #000000;
+            color: #e5e2e1;
+            overflow-x: hidden;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .cinematic-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
+        }
+
+        .amber-glow {
+            box-shadow: 0 0 40px -10px rgba(248, 159, 67, 0.3);
+        }
+
+        .progress-bar-fill {
+            transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/10 dark:bg-black/40 border-b border-white/10 h-20 transition-all duration-300">
+<div class="flex justify-between items-center max-w-[1280px] mx-auto px-gutter h-full">
+<div class="font-headline-xl text-headline-xl font-bold text-on-surface uppercase tracking-tighter">
+                VIGRAPH STUDIO
+            </div>
+<div class="hidden md:flex items-center gap-stack-lg">
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" href="#about">About Us</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" href="#work">Work</a>
+<a class="font-body-md text-body-md text-on-surface hover:text-primary transition-colors" href="#services">Services</a>
+</div>
+<button class="bg-primary-container text-on-primary-fixed font-bold py-2 px-6 rounded hover:scale-95 active:scale-90 transition-transform">
+                Contact Us
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative min-h-screen flex items-center overflow-hidden pt-20">
+<div class="absolute inset-0 z-0">
+
+<div class="absolute inset-0 cinematic-overlay"></div>
+</div>
+<div class="relative z-10 max-w-[1280px] mx-auto px-gutter w-full grid grid-cols-1 md:grid-cols-2 gap-stack-lg items-center">
+<div class="space-y-stack-lg">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em]">Cinematic Mastery</span>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-white leading-tight">
+                    Crafting Stories Through <span class="text-primary-container">Motion</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                    Professional Video Editor | Cinematic Storytelling | Content Creator. We bring your vision to life with technical precision and creative soul.
+                </p>
+<div class="flex flex-wrap gap-stack-md pt-4">
+<button class="bg-primary-container text-on-primary-fixed font-bold py-4 px-8 rounded flex items-center gap-2 hover:scale-95 transition-transform amber-glow">
+                        View My Work <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<button class="border border-white/20 text-white font-bold py-4 px-8 rounded hover:bg-white/5 transition-colors">
+                        Contact Me
+                    </button>
+</div>
+</div>
+<div class="hidden md:block relative group">
+<div class="aspect-[4/5] rounded-xl overflow-hidden border border-white/10 relative">
+<img alt="Professional Videographer in Studio" class="w-full h-full object-cover" data-alt="A professional male videographer in a darkened, high-end studio environment holding a cinema camera. He wears a black hoodie and cap, with atmospheric orange and blue studio lights reflecting on his gear. The background is softly blurred, showing pieces of sound equipment and a monitor, emphasizing the sophisticated, obsidian-toned editing suite aesthetic of Vigaph Studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMNKe2p4N1wGmZ2ius_cLJ_ziIcL5FqxqZlPn5tqi3rGEhlu4aGhgWjYFNX1GRoWsmb8HnFN7cxbC6JYXMhNtfq5UzJfFzwfrniiCAKC3V7SOhajjxna44e0vCew3WKyebrj0SstdQKgl0zOjVpNtMkUp5XhFva-vKA9ajRFF8nUtDYMGpoy8YnnI2fKj0NhfnQaifly8mmo6vqSEUvbTM3Z1MYW8hP2WnWoQMiqYNRVtZkKChg6CYF0WFiob7f3eQPA2jUcY4n13W"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+</div>
+<!-- Floating Element -->
+<div class="absolute -bottom-6 -left-6 glass-panel p-6 rounded-lg floating">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined">movie</span>
+</div>
+<div>
+<div class="font-label-mono text-label-mono text-primary uppercase">Projects Completed</div>
+<div class="font-headline-xl text-headline-xl text-white">500+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Support Bar -->
+<div class="bg-surface-container-lowest py-10 border-y border-white/5">
+<div class="max-w-[1280px] mx-auto px-gutter flex flex-wrap justify-between items-center gap-stack-lg grayscale opacity-50">
+<span class="font-label-mono text-label-mono">SUPPORTING DIGITAL BUSINESS</span>
+<span class="font-label-mono text-label-mono">BRANDING AGENCIES</span>
+<span class="font-label-mono text-label-mono">PRIVATE DOCUMENTARIES</span>
+<span class="font-label-mono text-label-mono">INFLUENCER CREATIVES</span>
+</div>
+</div>
+<!-- About Section -->
+<section class="py-section-gap max-w-[1280px] mx-auto px-gutter" id="about">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="relative">
+<div class="aspect-video rounded-xl overflow-hidden border border-white/10 group">
+<img alt="Editing Suite Setup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A cinematic, wide-angle shot of a high-end video editing suite at night. Two large curved monitors display complex timelines from Adobe Premiere Pro and DaVinci Resolve with vibrant color-coded tracks. A high-end mechanical keyboard and editing console are visible in the foreground, bathed in a soft orange ambient glow that matches the cinematic minimalist style of the brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfqoG1fWu6o8U7iReqpeoilgQ9PNZ6uk9nc4ECTGr4rNgTZWeVimZU_4aAyeUnOfPAjdAZInc7rBQQURS16RVGKK0l0Ie2NeRTKDztPn0jsBrdIkVjtmXsEqO_NHjjY3ScicaMo-I-ZMIgOiDjVIRzxtaclPlgb-1o9s_hEBKqiKk4h79X_GGITDpVBODf-5kTjnc38UANVGBxaFJPwGK_tXydw5wECCwmx2aZLQVrBdNOUpbBpRHvhZWTOehuAM0CZoLa90C6IhTV"/>
+</div>
+<div class="absolute -top-10 -right-10 w-40 h-40 border-t-2 border-r-2 border-primary/30 rounded-tr-3xl hidden md:block"></div>
+</div>
+<div class="space-y-stack-md">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em]">The Visionary</span>
+<h2 class="font-headline-xl text-headline-xl text-white">We Always Make The Best</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    We specialize in high-impact video editing for YouTube, commercial campaigns, cinematic reels, and long-form documentaries. Our approach blends technical mastery in color grading and motion graphics with a deep understanding of human psychology and storytelling.
+                </p>
+<div class="grid grid-cols-2 gap-stack-lg pt-6">
+<div class="space-y-stack-sm">
+<div class="font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Storytelling
+                        </div>
+<div class="font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Color Grading
+                        </div>
+</div>
+<div class="space-y-stack-sm">
+<div class="font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Motion Graphics
+                        </div>
+<div class="font-bold text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                            Sound Design
+                        </div>
+</div>
+</div>
+<button class="mt-8 bg-primary-container text-on-primary-fixed font-bold py-3 px-8 rounded transition-all hover:brightness-110">
+                    Learn More
+                </button>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-section-gap bg-surface-container-lowest" id="services">
+<div class="max-w-[1280px] mx-auto px-gutter">
+<div class="text-center mb-16 space-y-4">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em]">Our Expertise</span>
+<h2 class="font-headline-xl text-headline-xl text-white">Premium Creative Services</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg">
+<!-- Service Card 1 -->
+<div class="glass-panel p-10 rounded-xl hover:border-primary/40 transition-all duration-300 group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform inline-block">video_settings</span>
+<h3 class="font-headline-xl text-2xl text-white mb-4">Video Editing</h3>
+<p class="font-body-md text-on-surface-variant">Precision cutting for commercials and long-form content that maintains engagement and flow.</p>
+</div>
+<!-- Service Card 2 -->
+<div class="glass-panel p-10 rounded-xl hover:border-primary/40 transition-all duration-300 group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform inline-block">palette</span>
+<h3 class="font-headline-xl text-2xl text-white mb-4">Color Grading</h3>
+<p class="font-body-md text-on-surface-variant">Expert DaVinci Resolve grading to achieve that signature high-end cinematic look and feel.</p>
+</div>
+<!-- Service Card 3 -->
+<div class="glass-panel p-10 rounded-xl hover:border-primary/40 transition-all duration-300 group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform inline-block">auto_awesome</span>
+<h3 class="font-headline-xl text-2xl text-white mb-4">Motion Graphics</h3>
+<p class="font-body-md text-on-surface-variant">Advanced After Effects work including 2D/3D elements, typography, and visual effects.</p>
+</div>
+<!-- Service Card 4 -->
+<div class="glass-panel p-10 rounded-xl hover:border-primary/40 transition-all duration-300 group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform inline-block">graphic_eq</span>
+<h3 class="font-headline-xl text-2xl text-white mb-4">Sound Design</h3>
+<p class="font-body-md text-on-surface-variant">Immersive audio landscapes and precise foley work to ground your visuals in reality.</p>
+</div>
+<!-- Service Card 5 -->
+<div class="glass-panel p-10 rounded-xl hover:border-primary/40 transition-all duration-300 group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform inline-block">smart_display</span>
+<h3 class="font-headline-xl text-2xl text-white mb-4">YouTube Content</h3>
+<p class="font-body-md text-on-surface-variant">High-retention editing focused on narrative hooks and viewer psychological triggers.</p>
+</div>
+<!-- Service Card 6 -->
+<div class="glass-panel p-10 rounded-xl hover:border-primary/40 transition-all duration-300 group">
+<span class="material-symbols-outlined text-4xl text-primary mb-6 group-hover:scale-110 transition-transform inline-block">phone_iphone</span>
+<h3 class="font-headline-xl text-2xl text-white mb-4">Social Media</h3>
+<p class="font-body-md text-on-surface-variant">Fast-paced, vertical content optimization for TikTok, Reels, and Shorts platforms.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects -->
+<section class="py-section-gap max-w-[1280px] mx-auto px-gutter" id="work">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="space-y-4">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em]">Our Portfolio</span>
+<h2 class="font-headline-xl text-headline-xl text-white">Latest Work</h2>
+</div>
+<div class="flex gap-4">
+<button class="font-label-mono text-label-mono border-b-2 border-primary text-primary pb-1">All Projects</button>
+<button class="font-label-mono text-label-mono text-on-surface-variant hover:text-white transition-colors pb-1">Commercial</button>
+<button class="font-label-mono text-label-mono text-on-surface-variant hover:text-white transition-colors pb-1">YouTube</button>
+<button class="font-label-mono text-label-mono text-on-surface-variant hover:text-white transition-colors pb-1">Reels</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-stack-lg">
+<!-- Project 1 -->
+<div class="group relative aspect-video rounded-xl overflow-hidden border border-white/10 hover:scale-[1.02] transition-all duration-500">
+<img alt="Urban Night Commercial" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A cinematic frame from a high-end commercial featuring a sleek, dark sports car driving through a neon-lit urban environment at night. The lighting uses a sharp contrast of cyan and orange, highlighting the car's curves. The atmosphere is fast-paced and expensive, captured with a cinemascope aspect ratio of 2.35:1." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxL82CzE18IQKpRLLBTtF7f7tdtjiGZsIBabJiayreaLlA66EEq2nyj6W6UrW3Y7p8xo_9bqp6yc8VZAS_oMI5Ugz4VgD5PATNHyE8pX-pRzXbrh5nq0_Gn8TjLKivJ-upKF6scjhvRl1-41XneCVnouUQ3OLhnUiscS7TlXAjNKpc0MCb9PJWun3kpB7O4EHSIOJhXCpi2HLak7wx2wPyJbzmMPDOMV6AE_yddg2RD4PYAtfsmEqVBenC0wBzrC_bOKlnsQGgZeVA"/>
+<div class="absolute inset-0 glass-panel opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+<span class="font-label-mono text-label-mono text-primary mb-2">COMMERCIAL</span>
+<h4 class="font-headline-xl text-xl text-white">Midnight Pulse</h4>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-white/50 flex items-center justify-center backdrop-blur-md">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group relative aspect-video rounded-xl overflow-hidden border border-white/10 hover:scale-[1.02] transition-all duration-500">
+<img alt="Documentary Scene" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A gritty, cinematic documentary still showing an elderly artisan at work in a sun-drenched workshop. Motes of dust dance in shafts of warm morning light. The color grading is earthy and organic, emphasizing texture and raw emotion. The composition uses deep shadows to create a sense of focused isolation and timeless craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt8UeP-UnzwKnWAqPd5VZdJUq0x0LKZlpHSRo4LTqfE5LXzH10oWccYl4LYj4JmibFJsL7u2SRsDyGr-TuBLz-n2xfipUXTg1muu0HOBp4g2mYWth8dRuJOmCyzPiFLjVeI7l9sfiO745XqWQ8U_Sl3FYHP_HmnHQEM0MV0TrTEdP269UuMNv1ZzgMQU6qUoYSJ6lpnaZ7HDRclqRXR9fa0PKoG_csfYeCpStU2F_CH5L9PJ6wPI_thXKqjSPn0Nvpm57CN2us4lmi"/>
+<div class="absolute inset-0 glass-panel opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+<span class="font-label-mono text-label-mono text-primary mb-2">DOCUMENTARY</span>
+<h4 class="font-headline-xl text-xl text-white">The Last Artisan</h4>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-white/50 flex items-center justify-center backdrop-blur-md">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group relative aspect-video rounded-xl overflow-hidden border border-white/10 hover:scale-[1.02] transition-all duration-500">
+<img alt="Music Festival Edit" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="An energetic wide shot of a massive music festival stage during a light show at night. Beams of amber and white light pierce through a haze of smoke, creating a dramatic, high-energy atmosphere. The image is crisp and professional, capturing the intensity and scale of a live event through a cinematic minimalist lens." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY0AIaV_1uI52LJQN0PAM1brJLU7guqCfb8RVzWXE3WdI7D18F5ZsFuv6FVQYVimeWLTKD82bCuegeJtrX7Kc7fdyp-g2hKa7wLRuBvu4Xt4xjt6YqM74xfFd9gNp27FKnCEEKXqvB69zEKlYNnGq4yFs0aecRpEwASDsUqxWspe78pDbLuLjBWvmPzjJk3XvbqF1nktUtdIL3ShhKdAYgTrBjr5S4fFHOQxJejDXf3IqbjdGlwckay1NyrxtiS86DFi0xCSPiNv_f"/>
+<div class="absolute inset-0 glass-panel opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+<span class="font-label-mono text-label-mono text-primary mb-2">YOUTUBE</span>
+<h4 class="font-headline-xl text-xl text-white">Sonic Waves 2024</h4>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-white/50 flex items-center justify-center backdrop-blur-md">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="py-section-gap bg-surface-container">
+<div class="max-w-[1280px] mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+<div class="space-y-stack-md">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em]">Our Arsenal</span>
+<h2 class="font-headline-xl text-headline-xl text-white">Technical Mastery</h2>
+<p class="font-body-md text-on-surface-variant">We utilize the industry's most powerful tools to ensure your content is rendered with peak fidelity and creative flair. From surgical edits in Premiere to advanced grading in DaVinci.</p>
+<div class="space-y-stack-lg pt-6">
+<div>
+<div class="flex justify-between font-label-mono text-label-mono mb-2">
+<span>ADOBE PREMIERE PRO</span>
+<span>98%</span>
+</div>
+<div class="h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary progress-bar-fill" style="width: 98%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-mono text-label-mono mb-2">
+<span>DAVINCI RESOLVE</span>
+<span>95%</span>
+</div>
+<div class="h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary progress-bar-fill" style="width: 95%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between font-label-mono text-label-mono mb-2">
+<span>AFTER EFFECTS</span>
+<span>90%</span>
+</div>
+<div class="h-1 bg-white/10 rounded-full overflow-hidden">
+<div class="h-full bg-primary progress-bar-fill" style="width: 90%"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="glass-panel p-6 rounded-xl text-center">
+<img alt="Premiere Pro" class="w-12 h-12 mx-auto mb-4 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCihbQ7M1Z_FHlkfXGLJ0xxRSDmdzu7Rut-_Ngmfy3h3uu-sWoqiYPV4ON0PhB36HNO0M4mZKMzdbrKWb3zsjqDYky8y5g63tPTGBDSz1lBi6tiRNxAuGJ9wt3S9KUrl6SRt-ayXnPcfLOfAvqkcQJZKdyuPS_yQRjNihilx4ldhUvp-ZwUSPEDnf08z_bCHCovF2exKkF-h0_asHJJ1zt-QuKVxoC6gS41kuLFXUB5F7BKimM-atK5Sfh50QcLLuvMhdnAlj7wx2tM"/>
+<div class="font-label-mono text-[10px]">PREMIERE</div>
+</div>
+<div class="glass-panel p-6 rounded-xl text-center mt-8">
+<img alt="DaVinci" class="w-12 h-12 mx-auto mb-4 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvXUrS6Zkou_q9cjsoeeSrmhffWcFpK8cxJ-P-B74e8AQMG3rvL80wjgZBKSwsxs06KH_R_b2ZlbDz_A4hyy51XicuoErO6UeIKzOsTbpBRF60hQmdeGMaW2_pM-6mWpofYF8z-9OLxtkuvLqktrs7PAaL5SGX8TIPhOMByCIsSp-Zv4Y6X2XbAHuUes6i-uO_Dsyyq4HG72wE-euSiDOqoEQpBePqLRokybh1lMEgOISdIWKu6DOxTBM2d6LNm4HPmSbiYlnQn-lU"/>
+<div class="font-label-mono text-[10px]">DAVINCI</div>
+</div>
+<div class="glass-panel p-6 rounded-xl text-center">
+<img alt="After Effects" class="w-12 h-12 mx-auto mb-4 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYrbVHB_4wxpjhy-YsrHeE4CHFQN2TPnZ19xfoGxyD_VTeL0b2jKwPKQRttXa7q72-DdkLGmdPVpVbZUmeFREZmAaZ8BoGG0Jx7q_aSa8x_qBsL9sjEkb_1tHL56k8aEvH7TFVsAwlbsAYRskkVsbcFIS0bmb_3tccCfPHP_X02jWf6RMCBpGaJD8T2qKg78A0J8kEMQYtaMiSYYYDVe_GNKczsmuqodZ23UwrAsT2nbhK2TefSZM9OuAOPFyIRkgqPXU-OXA6XH-J"/>
+<div class="font-label-mono text-[10px]">AFTER EFFECTS</div>
+</div>
+<div class="glass-panel p-6 rounded-xl text-center mt-8">
+<img alt="Photoshop" class="w-12 h-12 mx-auto mb-4 grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3h4isceNBUeWQOIUf8RAJqTmySxubYFS4sWHuko4ld652FA1wtYWwD_ALPSxS6n58DPAI1bezJsJbzB6VufpnUNTLByQUaGeCLcKstSnDIMXpm4omMaQ-AxQglYR0SPsDmnrIiAbLExu4f1IvW0B8L_dvLawTgBKH8BG5skWyAEPwTRtHO0CIx-kQUpQxV1IG3Jg7jDsPBchRhX5XlPX4SWibYZtCUkjsGSa0Z6Ek3CM1Z8j3fnFiicOn9wzAZ5urWYC8dF6Zjl1D"/>
+<div class="font-label-mono text-[10px]">PHOTOSHOP</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-section-gap overflow-hidden">
+<div class="max-w-[1280px] mx-auto px-gutter">
+<div class="text-center mb-16 space-y-4">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em]">Voices of Trust</span>
+<h2 class="font-headline-xl text-headline-xl text-white">Client Success Stories</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-lg relative">
+<div class="glass-panel p-10 rounded-xl relative overflow-hidden group">
+<span class="material-symbols-outlined text-primary/20 text-8xl absolute -top-4 -right-4">format_quote</span>
+<p class="font-body-lg text-white mb-8 relative z-10 italic">"Vigraph Studio completely transformed our brand identity with their cinematic vision. The editing was flawless."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white/10"></div>
+<div>
+<div class="font-bold text-white">James Arquette</div>
+<div class="font-label-mono text-xs text-on-surface-variant">CEO, LUMINA DIGITAL</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-10 rounded-xl relative overflow-hidden md:mt-12 group border-primary/20">
+<span class="material-symbols-outlined text-primary/20 text-8xl absolute -top-4 -right-4">format_quote</span>
+<p class="font-body-lg text-white mb-8 relative z-10 italic">"The speed and technical proficiency are unmatched. They didn't just edit a video; they told a compelling story."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white/10"></div>
+<div>
+<div class="font-bold text-white">Sarah Jenkins</div>
+<div class="font-label-mono text-xs text-on-surface-variant">CONTENT CREATOR</div>
+</div>
+</div>
+</div>
+<div class="glass-panel p-10 rounded-xl relative overflow-hidden group">
+<span class="material-symbols-outlined text-primary/20 text-8xl absolute -top-4 -right-4">format_quote</span>
+<p class="font-body-lg text-white mb-8 relative z-10 italic">"Working with them was the best creative decision we made last year. Highly recommended for high-end work."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-white/10"></div>
+<div>
+<div class="font-bold text-white">Mark Vossen</div>
+<div class="font-label-mono text-xs text-on-surface-variant">DIRECTOR, VORTEX FILMS</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-section-gap bg-surface-container-low border-t border-white/5" id="contact">
+<div class="max-w-[1280px] mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-20">
+<div class="space-y-stack-md">
+<span class="font-label-mono text-label-mono text-primary uppercase tracking-[0.2em]">Get in Touch</span>
+<h2 class="font-headline-xl text-headline-xl text-white">Let's Create Something <span class="text-primary">Legendary</span></h2>
+<p class="font-body-lg text-on-surface-variant">Ready to elevate your visual content? Fill out the form or reach out through our social channels. We typically respond within 24 hours.</p>
+<div class="flex flex-col gap-6 pt-10">
+<a class="flex items-center gap-4 group" href="mailto:hello@vigraphstudio.com">
+<div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary">mail</span>
+</div>
+<div>
+<div class="font-label-mono text-xs text-on-surface-variant">EMAIL US</div>
+<div class="text-white font-bold">hello@vigraphstudio.com</div>
+</div>
+</a>
+<a class="flex items-center gap-4 group" href="#">
+<div class="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+<span class="material-symbols-outlined text-primary">share</span>
+</div>
+<div>
+<div class="font-label-mono text-xs text-on-surface-variant">FOLLOW US</div>
+<div class="text-white font-bold flex gap-4">
+<span class="hover:text-primary transition-colors cursor-pointer">Instagram</span>
+<span class="hover:text-primary transition-colors cursor-pointer">LinkedIn</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Vimeo</span>
+</div>
+</div>
+</a>
+</div>
+</div>
+<form class="glass-panel p-10 rounded-xl space-y-6">
+<div class="space-y-2">
+<label class="font-label-mono text-xs text-on-surface-variant">FULL NAME</label>
+<input class="w-full bg-transparent border-0 border-b border-white/10 focus:ring-0 focus:border-primary text-white py-3 transition-colors" placeholder="Your Name" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-xs text-on-surface-variant">EMAIL ADDRESS</label>
+<input class="w-full bg-transparent border-0 border-b border-white/10 focus:ring-0 focus:border-primary text-white py-3 transition-colors" placeholder="you@example.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-mono text-xs text-on-surface-variant">MESSAGE</label>
+<textarea class="w-full bg-transparent border-0 border-b border-white/10 focus:ring-0 focus:border-primary text-white py-3 transition-colors h-32 resize-none" placeholder="Briefly describe your project..."></textarea>
+</div>
+<button class="w-full bg-primary-container text-on-primary-fixed font-bold py-4 rounded hover:brightness-110 transition-all uppercase tracking-widest text-sm" type="submit">
+                    Send Message
+                </button>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full py-stack-lg border-t border-surface-container-high bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1280px] mx-auto px-gutter gap-stack-md">
+<div class="font-headline-xl text-headline-xl text-on-surface uppercase tracking-tighter">VIGRAPH STUDIO</div>
+<div class="flex gap-stack-lg">
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">Instagram</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">Vimeo</a>
+<a class="font-label-mono text-label-mono text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+</div>
+<div class="font-label-mono text-label-mono text-on-surface-variant">
+                © 2024 VIGRAPH STUDIO. ALL RIGHTS RESERVED.
+            </div>
+</div>
+</footer>
+<script>
+        // Simple scroll reveal interaction
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+
+        // Sticky Navbar background shift
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('h-16', 'bg-black/80');
+                nav.classList.remove('h-20', 'bg-white/10');
+            } else {
+                nav.classList.add('h-20', 'bg-white/10');
+                nav.classList.remove('h-16', 'bg-black/80');
+            }
+        });
+    </script>
+</body></html>

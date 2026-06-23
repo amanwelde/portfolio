@@ -1,0 +1,75 @@
+﻿{
+    "id":  2,
+    "jsonrpc":  "2.0",
+    "result":  {
+                   "content":  [
+                                   {
+                                       "text":  "{\"screens\":[{\"name\":\"projects/11593109071109163773/screens/8880499668961343221\",\"title\":\"download (6).jfif\",\"screenshot\":{\"name\":\"projects/11593109071109163773/files/8880499668961343102\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AP1WRLvtHc4nMAXKmB-7bun1XbBIb5p_A2LGb9P5XteBSU2M_1qpqqwadpJCJHYafXOSi7ztBpEimlkkec-sTe3mduulGhIUjJtU6BbHXsOiIUDlELC4hA9lIbf6cR17-t0WS8qlAmTRSSk3k6ShrbEWtUILxKfYgpSi3ZtPQyLRM3tuMrjziubtbvXan9aG8DJPYD9zcg4huAFk6CE_96HbF193VGJIo3lZNBtP9nQlbEVtZ74zOOMBYYHDse2rz-b59_kR2MhiCLHz0To\"},\"htmlCode\":{},\"width\":\"736\",\"height\":\"1251\"},{\"name\":\"projects/11593109071109163773/screens/0647cb5949574ffe83dfb73eaed34b0f\",\"title\":\"Cinematic Portfolio Homepage\",\"screenshot\":{\"name\":\"projects/11593109071109163773/files/f983f2659ae047048eacaa0a7718b09e\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AP1WRLthFZoo4vnoP3Rtkqk6BxbK8swyOFZAOcxSJE4vZuyzjpeKyCox7F5Uw8nqhvLlFh7gTCNIvIvwVQJ6xn__Ge2265pkcSA-xN2YtmKDWVhtU26y2tdtYxDE2FqAaSdTZ5I3gdqCqAiUIGHZvVudbW7THQs3ayPBSl3nC3P5cw_K0bBcFYjhWvictqKrul-G4KAL0bWAHZqBz5h2It9yrt219QOG34ZNQJykVTTfJSXC5J48HPyfcIS34uka\"},\"htmlCode\":{\"name\":\"projects/11593109071109163773/files/32e68e0a60e9434fa989540e9b5b7361\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzY3MWNlYmVlYjJhODRjYzY4NjNjNjYxOWZhOTM5NTk3EgsSBxC0gNXvthUYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTU5MzEwOTA3MTEwOTE2Mzc3Mw\u0026filename=\u0026opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"2560\",\"height\":\"11102\",\"deviceType\":\"DESKTOP\"},{\"name\":\"projects/11593109071109163773/screens/6c1181635681435781b93d7e740635c2\",\"title\":\"Cinematic Portfolio with Motion\",\"screenshot\":{\"name\":\"projects/11593109071109163773/files/679d33b3c97640c5bced61f4f17eeb17\",\"downloadUrl\":\"https://lh3.googleusercontent.com/aida/AP1WRLt-976jpyrU6-OoyTrqoNrT0AxL8bRPxvH2ndBk-gPFIzwgZYoVXqXCt1eBjp3Wgoc6puNIJO24mDDn4UKoAtPnusDj1I94dBrSDgsz_-T_LMf2Sr3aScKFQUZKLl_OxVXO8dcKbqMJHwNiE0A8e0Q0JQrhUAthhK9_ZHqLasyzFO6E0o8IcTIQ-xTzOiqxjR9gfiEZCragRQSN0TN0O6VW8qsTSnE5AtcqesWjiUsSN_JsTSWzDXvVAin9\"},\"htmlCode\":{\"name\":\"projects/11593109071109163773/files/5c181ec7d84148bc95af0ada5254c393\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzA5Yjg2MWQ2MDdmYTRhNzJhMDczOTk5MTdkMjRmNTY0EgsSBxC0gNXvthUYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTU5MzEwOTA3MTEwOTE2Mzc3Mw\u0026filename=\u0026opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"2560\",\"height\":\"11102\",\"deviceType\":\"DESKTOP\"},{\"name\":\"projects/11593109071109163773/screens/180a8765c9634140b5b3cd645dfe18ba\",\"title\":\"Shader\",\"screenshot\":{},\"htmlCode\":{\"name\":\"projects/11593109071109163773/files/e7687381b56a4f2e9b4d37a5351e6d4c\",\"downloadUrl\":\"https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2ExOTJjMjY4NmViYTRjZjg5NTVhYjYyMzY1MWQ3N2IyEgsSBxC0gNXvthUYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTU5MzEwOTA3MTEwOTE2Mzc3Mw\u0026filename=\u0026opi=89354086\",\"mimeType\":\"text/html\"},\"width\":\"512\",\"height\":\"512\"}]}",
+                                       "type":  "text"
+                                   }
+                               ],
+                   "structuredContent":  {
+                                             "screens":  [
+                                                             {
+                                                                 "height":  "1251",
+                                                                 "htmlCode":  {
+
+                                                                              },
+                                                                 "name":  "projects/11593109071109163773/screens/8880499668961343221",
+                                                                 "screenshot":  {
+                                                                                    "downloadUrl":  "https://lh3.googleusercontent.com/aida/AP1WRLvtHc4nMAXKmB-7bun1XbBIb5p_A2LGb9P5XteBSU2M_1qpqqwadpJCJHYafXOSi7ztBpEimlkkec-sTe3mduulGhIUjJtU6BbHXsOiIUDlELC4hA9lIbf6cR17-t0WS8qlAmTRSSk3k6ShrbEWtUILxKfYgpSi3ZtPQyLRM3tuMrjziubtbvXan9aG8DJPYD9zcg4huAFk6CE_96HbF193VGJIo3lZNBtP9nQlbEVtZ74zOOMBYYHDse2rz-b59_kR2MhiCLHz0To",
+                                                                                    "name":  "projects/11593109071109163773/files/8880499668961343102"
+                                                                                },
+                                                                 "title":  "download (6).jfif",
+                                                                 "width":  "736"
+                                                             },
+                                                             {
+                                                                 "deviceType":  "DESKTOP",
+                                                                 "height":  "11102",
+                                                                 "htmlCode":  {
+                                                                                  "downloadUrl":  "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzY3MWNlYmVlYjJhODRjYzY4NjNjNjYxOWZhOTM5NTk3EgsSBxC0gNXvthUYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTU5MzEwOTA3MTEwOTE2Mzc3Mw\u0026filename=\u0026opi=89354086",
+                                                                                  "mimeType":  "text/html",
+                                                                                  "name":  "projects/11593109071109163773/files/32e68e0a60e9434fa989540e9b5b7361"
+                                                                              },
+                                                                 "name":  "projects/11593109071109163773/screens/0647cb5949574ffe83dfb73eaed34b0f",
+                                                                 "screenshot":  {
+                                                                                    "downloadUrl":  "https://lh3.googleusercontent.com/aida/AP1WRLthFZoo4vnoP3Rtkqk6BxbK8swyOFZAOcxSJE4vZuyzjpeKyCox7F5Uw8nqhvLlFh7gTCNIvIvwVQJ6xn__Ge2265pkcSA-xN2YtmKDWVhtU26y2tdtYxDE2FqAaSdTZ5I3gdqCqAiUIGHZvVudbW7THQs3ayPBSl3nC3P5cw_K0bBcFYjhWvictqKrul-G4KAL0bWAHZqBz5h2It9yrt219QOG34ZNQJykVTTfJSXC5J48HPyfcIS34uka",
+                                                                                    "name":  "projects/11593109071109163773/files/f983f2659ae047048eacaa0a7718b09e"
+                                                                                },
+                                                                 "title":  "Cinematic Portfolio Homepage",
+                                                                 "width":  "2560"
+                                                             },
+                                                             {
+                                                                 "deviceType":  "DESKTOP",
+                                                                 "height":  "11102",
+                                                                 "htmlCode":  {
+                                                                                  "downloadUrl":  "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sXzA5Yjg2MWQ2MDdmYTRhNzJhMDczOTk5MTdkMjRmNTY0EgsSBxC0gNXvthUYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTU5MzEwOTA3MTEwOTE2Mzc3Mw\u0026filename=\u0026opi=89354086",
+                                                                                  "mimeType":  "text/html",
+                                                                                  "name":  "projects/11593109071109163773/files/5c181ec7d84148bc95af0ada5254c393"
+                                                                              },
+                                                                 "name":  "projects/11593109071109163773/screens/6c1181635681435781b93d7e740635c2",
+                                                                 "screenshot":  {
+                                                                                    "downloadUrl":  "https://lh3.googleusercontent.com/aida/AP1WRLt-976jpyrU6-OoyTrqoNrT0AxL8bRPxvH2ndBk-gPFIzwgZYoVXqXCt1eBjp3Wgoc6puNIJO24mDDn4UKoAtPnusDj1I94dBrSDgsz_-T_LMf2Sr3aScKFQUZKLl_OxVXO8dcKbqMJHwNiE0A8e0Q0JQrhUAthhK9_ZHqLasyzFO6E0o8IcTIQ-xTzOiqxjR9gfiEZCragRQSN0TN0O6VW8qsTSnE5AtcqesWjiUsSN_JsTSWzDXvVAin9",
+                                                                                    "name":  "projects/11593109071109163773/files/679d33b3c97640c5bced61f4f17eeb17"
+                                                                                },
+                                                                 "title":  "Cinematic Portfolio with Motion",
+                                                                 "width":  "2560"
+                                                             },
+                                                             {
+                                                                 "height":  "512",
+                                                                 "htmlCode":  {
+                                                                                  "downloadUrl":  "https://contribution.usercontent.google.com/download?c=CgthaWRhX2NvZGVmeBJ8Eh1hcHBfY29tcGFuaW9uX2dlbmVyYXRlZF9maWxlcxpbCiVodG1sX2ExOTJjMjY4NmViYTRjZjg5NTVhYjYyMzY1MWQ3N2IyEgsSBxC0gNXvthUYAZIBJAoKcHJvamVjdF9pZBIWQhQxMTU5MzEwOTA3MTEwOTE2Mzc3Mw\u0026filename=\u0026opi=89354086",
+                                                                                  "mimeType":  "text/html",
+                                                                                  "name":  "projects/11593109071109163773/files/e7687381b56a4f2e9b4d37a5351e6d4c"
+                                                                              },
+                                                                 "name":  "projects/11593109071109163773/screens/180a8765c9634140b5b3cd645dfe18ba",
+                                                                 "screenshot":  {
+
+                                                                                },
+                                                                 "title":  "Shader",
+                                                                 "width":  "512"
+                                                             }
+                                                         ]
+                                         }
+               }
+}

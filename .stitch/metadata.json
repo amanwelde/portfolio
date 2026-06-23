@@ -1,0 +1,17 @@
+{
+  "stitchProjectId": "11593109071109163773",
+  "stitchProjectTitle": "Cinematic Motion Portfolio",
+  "screens": {
+    "homepage": "0647cb5949574ffe83dfb73eaed34b0f",
+    "referenceUpload": "8880499668961343221"
+  },
+  "designTokens": {
+    "primary": "#f89f43",
+    "background": "#131313",
+    "fonts": {
+      "display": "Plus Jakarta Sans",
+      "body": "Hanken Grotesk",
+      "mono": "JetBrains Mono"
+    }
+  }
+}

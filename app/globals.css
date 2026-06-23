@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #131313;
+  --color-background: #131313;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #d9c2b1;
+  --color-primary: #ffc38d;
+  --color-primary-container: #f89f43;
+  --color-on-primary-fixed: #2d1600;
+  --color-outline: #a18d7d;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-surface-container-low: #1c1b1b;
+  --color-surface-container: #201f1f;
+  --color-surface-container-high: #2a2a2a;
+
+  --font-display: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Hanken Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  --spacing-gutter: 32px;
+  --spacing-section-gap: 120px;
+  --spacing-stack-sm: 8px;
+  --spacing-stack-md: 16px;
+  --spacing-stack-lg: 32px;
+
+  --animate-float: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+:root {
+  color-scheme: dark;
+  color: #e5e2e1;
+  background: #000;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #000;
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: var(--color-primary-container);
+  color: var(--color-on-primary-fixed);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+}
+
+.material-symbols-outlined.filled {
+  font-variation-settings: "FILL" 1, "wght" 300, "GRAD" 0, "opsz" 24;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cinematic-overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.amber-glow {
+  box-shadow: 0 0 40px -10px rgba(248, 159, 67, 0.3);
+}
+
+.container-main {
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--spacing-gutter);
+}
+
+@media (max-width: 768px) {
+  .container-main {
+    padding-inline: 20px;
+  }
+}
