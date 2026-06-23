@@ -32,13 +32,22 @@ function sign(params: Record<string, string | number>, apiSecret: string) {
 export async function uploadToCloudinary(file: File, resourceType: 'image' | 'video') {
   const { cloudName, apiKey, apiSecret } = getCloudinaryConfig()
   const timestamp = Math.round(Date.now() / 1000)
-  const params = { folder: 'aman-creative', timestamp }
+  const params: Record<string, string | number> = { folder: 'aman-creative', timestamp }
+  
+  if (resourceType === 'video') {
+    // Compress incoming video to save storage space while maintaining visual quality
+    params.transformation = 'c_limit,w_1080,q_auto:good'
+  }
+
   const formData = new FormData()
 
   formData.append('file', file)
   formData.append('api_key', apiKey)
-  formData.append('folder', params.folder)
+  formData.append('folder', params.folder as string)
   formData.append('timestamp', String(timestamp))
+  if (params.transformation) {
+    formData.append('transformation', params.transformation as string)
+  }
   formData.append('signature', sign(params, apiSecret))
 
   const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/${resourceType}/upload`, {
